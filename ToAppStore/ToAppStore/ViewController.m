@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <StoreKit/StoreKit.h>
+#import "ViewController2.h"
 @interface ViewController ()<SKStoreProductViewControllerDelegate>
 
 @end
@@ -37,7 +38,14 @@
     button2.tag = 2;
     [self.view addSubview:button2];
     
-    
+    UIButton * button3 = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 50)];
+    button3.center = CGPointMake(self.view.center.x, 300);
+    [button3 setTitle:@"跳转到goToAntherVc" forState:UIControlStateNormal];
+    button3.backgroundColor = [UIColor blueColor];
+    [button3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button3 addTarget:self action:@selector(goToAntherVc:) forControlEvents:UIControlEventTouchUpInside];
+    button3.tag = 3;
+    [self.view addSubview:button3];
 }
 - (void)goToAppstoreWay:(UIButton *)btn{
     if (btn.tag == 1) {
@@ -85,8 +93,11 @@
              }
          }];
     }
-    
-    
+}
+- (void)goToAntherVc:(UIButton *)btn{
+    ViewController2 * pushVC = [[ViewController2 alloc]init];
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:pushVC];
+    [self presentViewController:nav animated:YES completion:nil];
     
 }
 #pragma mark - 评分取消按钮监听

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToAppStore/ViewController.m"
-            timestampString = "551720142.101716"
+            timestampString = "551805752.28031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-goToAppstoreWay:"
             landmarkType = "7">
          </BreakpointContent>
