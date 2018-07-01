@@ -67,10 +67,13 @@
         NSString * urlStr8 = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=588287777&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8";
         
         
-//        [[UIApplication sharedApplication] openURL:
-//         [NSURL URLWithString:urlStr8]];
-         [SKStoreReviewController requestReview];
-         
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString:urlStr2]];
+        
+        
+        //直接跳转alert弹窗出现评分
+       //  [SKStoreReviewController requestReview];
+        
     }else{
         //第二中方法  应用内跳转
         //1:导入StoreKit.framework,控制器里面添加框架#import <StoreKit/StoreKit.h>
