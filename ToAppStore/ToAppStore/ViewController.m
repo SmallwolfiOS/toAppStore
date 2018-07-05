@@ -65,7 +65,7 @@
         NSString * urlStr7 = @"itms-apps://itunes.apple.com/app/id588287777";
         //无法连接
         NSString * urlStr8 = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=588287777&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8";
-        
+        [btn setExclusiveTouch:YES];
         
         [[UIApplication sharedApplication] openURL:
          [NSURL URLWithString:urlStr2]];
@@ -92,6 +92,10 @@
                  NSLog(@"错误%@",error);
              }else{
                  //AS应用界面
+                 
+                 //如果想像今日头条那样自定义这个弹出vc的大小，可以把view拿出来单独加载
+//                 [storeProductViewContorller.view setFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height- 100)];
+//                 [self.view addSubview:storeProductViewContorller.view];
                  [self presentViewController:storeProductViewContorller animated:YES completion:nil];
              }
          }];
@@ -106,6 +110,9 @@
 #pragma mark - 评分取消按钮监听
 //取消按钮监听
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
+    //如果想像今日头条那样自定义这个弹出vc的大小，可以把view拿出来单独加载
+//    [viewController.view removeFromSuperview];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
