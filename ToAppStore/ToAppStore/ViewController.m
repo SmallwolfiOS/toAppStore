@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <StoreKit/StoreKit.h>
 #import "ViewController2.h"
+#import "SKViewController.h"
 @interface ViewController ()<SKStoreProductViewControllerDelegate>
 
 @end
@@ -31,7 +32,7 @@
     
     UIButton * button2 = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 50)];
     button2.center = CGPointMake(self.view.center.x, 200);
-    [button2 setTitle:@"跳转到AppStore" forState:UIControlStateNormal];
+    [button2 setTitle:@"跳转到AppStore2" forState:UIControlStateNormal];
     button2.backgroundColor = [UIColor blueColor];
     [button2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(goToAppstoreWay:) forControlEvents:UIControlEventTouchUpInside];
@@ -78,12 +79,13 @@
         //第二中方法  应用内跳转
         //1:导入StoreKit.framework,控制器里面添加框架#import <StoreKit/StoreKit.h>
         //2:实现代理SKStoreProductViewControllerDelegate
-        SKStoreProductViewController *storeProductViewContorller = [[SKStoreProductViewController alloc] init];
+        SKViewController *storeProductViewContorller = [[SKViewController alloc] init];
         storeProductViewContorller.delegate = self;
         //        ViewController *viewc = [[ViewController alloc]init];
         //        __weak typeof(viewc) weakViewController = viewc;
         
         //加载一个新的视图展示
+        [self presentViewController:storeProductViewContorller animated:YES completion:nil];
         [storeProductViewContorller loadProductWithParameters:
          //appId
          @{SKStoreProductParameterITunesItemIdentifier : @"588287777"} completionBlock:^(BOOL result, NSError *error) {
@@ -94,9 +96,14 @@
                  //AS应用界面
                  
                  //如果想像今日头条那样自定义这个弹出vc的大小，可以把view拿出来单独加载
-//                 [storeProductViewContorller.view setFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height- 100)];
+                
 //                 [self.view addSubview:storeProductViewContorller.view];
-                 [self presentViewController:storeProductViewContorller animated:YES completion:nil];
+                 
+                 //但是后来我发现最终效果并不是今日头条广告展现的拿那样，最终解决办法是子类化SKStoreProductViewController
+                 
+//               [storeProductViewContorller.view setFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height- 100)];
+                 
+//               [self presentViewController:storeProductViewContorller animated:YES completion:nil];
              }
          }];
     }
@@ -112,7 +119,6 @@
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
     //如果想像今日头条那样自定义这个弹出vc的大小，可以把view拿出来单独加载
 //    [viewController.view removeFromSuperview];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

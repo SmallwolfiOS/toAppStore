@@ -15,6 +15,7 @@
 		E282EC0220DD40DB00B225BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E282EC0020DD40DB00B225BD /* LaunchScreen.storyboard */; };
 		E282EC0520DD40DB00B225BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E282EC0420DD40DB00B225BD /* main.m */; };
 		E282EC0D20DD4A0200B225BD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E282EC0C20DD4A0200B225BD /* StoreKit.framework */; };
+		E299AFB2210BF723003949D4 /* SKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E299AFB1210BF723003949D4 /* SKViewController.m */; };
 		E2EE9E2920E3D25B003B77F4 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE9E2820E3D25B003B77F4 /* ViewController2.m */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		E282EC0320DD40DB00B225BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E282EC0420DD40DB00B225BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E282EC0C20DD4A0200B225BD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E299AFB0210BF723003949D4 /* SKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKViewController.h; sourceTree = "<group>"; };
+		E299AFB1210BF723003949D4 /* SKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKViewController.m; sourceTree = "<group>"; };
 		E2EE9E2720E3D25B003B77F4 /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		E2EE9E2820E3D25B003B77F4 /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +94,8 @@
 				E282EC0020DD40DB00B225BD /* LaunchScreen.storyboard */,
 				E282EC0320DD40DB00B225BD /* Info.plist */,
 				E282EC0420DD40DB00B225BD /* main.m */,
+				E299AFB0210BF723003949D4 /* SKViewController.h */,
+				E299AFB1210BF723003949D4 /* SKViewController.m */,
 			);
 			path = ToAppStore;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				E282EBFA20DD40DA00B225BD /* ViewController.m in Sources */,
 				E2EE9E2920E3D25B003B77F4 /* ViewController2.m in Sources */,
 				E282EC0520DD40DB00B225BD /* main.m in Sources */,
+				E299AFB2210BF723003949D4 /* SKViewController.m in Sources */,
 				E282EBF720DD40DA00B225BD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
